@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.query.Query;
 
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -31,8 +30,8 @@ public class ApiApplication {
 			////////
 			// TEST
 			////////
-//			genreRepository.deleteAll();
-//			movieRepository.deleteAll();
+			genreRepository.deleteAll();
+			movieRepository.deleteAll();
 
 			Genre genre1 = new Genre("Crime");
 			Genre genre2 = new Genre("Drama");
