@@ -1,6 +1,7 @@
-package com.cinema.api.model;
+package com.cinema.api.Movie;
 
-import lombok.*;
+import com.cinema.api.Genre.Genre;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,7 +13,7 @@ import java.util.List;
 @Document("movies")
 public class Movie {
     @Id
-    private String id;
+    private String movieId;
     private String title;
     @DBRef
     private List<Genre> genres;

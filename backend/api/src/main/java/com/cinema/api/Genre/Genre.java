@@ -1,16 +1,18 @@
-package com.cinema.api.model;
+package com.cinema.api.Genre;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Data
-@Document("genres")
+@Document(collection = "genres")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Genre {
     @Id
-    private String id;
-    @Indexed(unique = true)
+    private String genreId;
     private String name;
 
     public Genre(String name) {
