@@ -18,14 +18,12 @@ export default class ApiService {
     }
 
     async getPopularMovies(): Promise<Movie[]> {
-        console.log("start");
         const response = await this.api.get<Movie[]>(API.GET_POPULAR_MOVIES);
         console.log("got popular movies", response.data);
         return response.data;
     }
 
     async getUpcomingMovies(): Promise<Movie[]> {
-        console.log("start");
         const response = await this.api.get<Movie[]>(API.GET_UPCOMING_MOVIES);
         console.log("got upcoming movies", response.data);
         return response.data;
