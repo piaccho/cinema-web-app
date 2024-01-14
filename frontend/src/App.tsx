@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Button, TextField, Box } from '@mui/material';
-// import Carousel from './components/Carousel'
+import Carousel from './components/Carousel'
 import ApiService from './ApiService';
 import { Genre, Movie } from './types';
 // import { Routes, Route, Outlet, Link } from "react-router-dom";
-
-const CarouselItem: React.FC<{ movie: Movie }> = ({ movie }) => (
-  <div>
-    <img src={movie.image} alt={movie.title} />
-    <p className="legend">{movie.title}</p>
-    <p>{movie.releaseDate}</p>
-  </div>
-);
+import CarouselItem from './components/CarouselItem';
+import Logo from './assets/logo_light.svg';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
@@ -394,27 +389,31 @@ const App = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="logo">
-            <img src="logo.jpg" alt="Logo" />
+            <img src={Logo} alt="Logo" height="40px" />
           </IconButton>
-          <Button color="inherit">Logowanie</Button>
-          <Button color="inherit">Rejestracja</Button>
-          <TextField id="search" label="Wyszukaj" variant="filled" />
+          <Box ml="auto" display="flex" flexDirection="row">
+            <Button color="inherit">Log in</Button>
+            <Button color="inherit">Sign up</Button>
+            <SearchBar />
+          </Box>
         </Toolbar>
       </AppBar>
-      <nav>
-        <Button>Repertuar</Button>
-        <Button>Oferty</Button>
-      </nav>
+      <AppBar position="static">
+        <Toolbar>
+          <Button>Repertuar</Button>
+          <Button>Oferty</Button>
+        </Toolbar>
+      </AppBar>
       {/* <SignIn /> */}
-      {movies.map((movie) => (
+      {/* {movies.map((movie) => (
         <CarouselItem movie={movie} />
-      ))}
-      {/* <Carousel elements={popularMovies.map((movie) => (
+      ))} */}
+      <Carousel elements={popularMovies.map((movie) => (
         <CarouselItem movie={movie} />
       ))}/>
       <Carousel elements={upcomingMovies.map((movie) => (
         <CarouselItem movie={movie} />
-      ))}/> */}
+      ))}/>
       <footer>
         <Box display="flex" justifyContent="space-between">
           <div>O nas</div>

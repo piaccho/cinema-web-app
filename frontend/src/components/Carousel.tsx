@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Box } from '@mui/material';
-
-interface CarouselProps {
-    elements: React.ReactNode[];
-}
+import { CarouselProps } from '../types';
 
 const Carousel: React.FC<CarouselProps> = ({ elements }) => {
     const [currentIndex, setCurrentIndex] = useState(0);

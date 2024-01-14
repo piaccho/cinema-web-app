@@ -1,0 +1,107 @@
+[
+    {
+        "movie": "Avengers: Endgame",
+        "hall_id": 1,
+        "date": "2024-02-01",
+        "freeSeats": 100,
+        "type": "sub"
+    },
+    {
+        "movie": "The Lion King",
+        "hall_id": 2,
+        "date": "2024-02-01",
+        "freeSeats": 150,
+        "type": "dub"
+    },
+    {
+        "movie": "Inception",
+        "hall_id": 3,
+        "date": "2024-02-01",
+        "freeSeats": 80,
+        "type": "sub"
+    },
+    {
+        "movie": "Frozen",
+        "hall_id": 4,
+        "date": "2024-02-01",
+        "freeSeats": 120,
+        "type": "dub"
+    },
+    {
+        "movie": "The Dark Knight",
+        "hall_id": 5,
+        "date": "2024-02-01",
+        "freeSeats": 90,
+        "type": "voiceOver"
+    },
+    {
+        "movie": "Spider-Man: No Way Home",
+        "hall_id": 6,
+        "date": "2024-02-03",
+        "freeSeats": 110,
+        "type": "sub"
+    },
+    {
+        "movie": "Toy Story",
+        "hall_id": 7,
+        "date": "2024-02-03",
+        "freeSeats": 130,
+        "type": "dub"
+    },
+    {
+        "movie": "Interstellar",
+        "hall_id": 8,
+        "date": "2024-02-03",
+        "freeSeats": 70,
+        "type": "sub"
+    },
+    {
+        "movie": "Moana",
+        "hall_id": 9,
+        "date": "2024-02-03",
+        "freeSeats": 100,
+        "type": "dub"
+    },
+    {
+        "movie": "Joker",
+        "hall_id": 10,
+        "date": "2024-02-03",
+        "freeSeats": 80,
+        "type": "voiceOver"
+    },
+    {
+        "movie": "Black Widow",
+        "hall_id": 11,
+        "date": "2024-02-03",
+        "freeSeats": 90,
+        "type": "sub"
+    },
+    {
+        "movie": "Finding Nemo",
+        "hall_id": 12,
+        "date": "2024-02-03",
+        "freeSeats": 120,
+        "type": "dub"
+    },
+    {
+        "movie": "The Matrix",
+        "hall_id": 13,
+        "date": "2024-02-03",
+        "freeSeats": 70,
+        "type": "sub"
+    },
+    {
+        "movie": "Coco",
+        "hall_id": 14,
+        "date": "2024-02-03",
+        "freeSeats": 100,
+        "type": "dub"
+    },
+    {
+        "movie": "The Avengers",
+        "hall_id": 15,
+        "date": "2024-02-03",
+        "freeSeats": 80,
+        "type": "voiceOver"
+    }        
+]

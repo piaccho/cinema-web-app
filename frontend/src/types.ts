@@ -17,3 +17,7 @@ export interface Genre {
     id: number;
     name: string;
 }
+
+export interface CarouselProps {
+    elements: React.ReactNode[];
+}
