@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -21,7 +20,6 @@ public class Movie {
     @Id
     private String movieId;
     private String title;
-    @DBRef
     private List<Category> categories;
     private String director;
     private String description;
