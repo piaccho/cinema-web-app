@@ -1,7 +1,10 @@
 package com.cinema.api.Movie;
 
-import com.cinema.api.Genre.Genre;
+import com.cinema.api.Category.Category;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,12 +14,15 @@ import java.util.List;
 
 @Data
 @Document("movies")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Movie {
     @Id
     private String movieId;
     private String title;
     @DBRef
-    private List<Genre> genres;
+    private List<Category> categories;
     private String director;
     private String description;
     private String poster;
@@ -25,9 +31,9 @@ public class Movie {
     private int runtime;
     private LocalDateTime createdAt;
 
-    public Movie(String title, List<Genre> genres, String director, String description, String poster, String releaseDate, String rating, int runtime, LocalDateTime createdAt) {
+    public Movie(String title, List<Category> categories, String director, String description, String poster, String releaseDate, String rating, int runtime, LocalDateTime createdAt) {
         this.title = title;
-        this.genres = genres;
+        this.categories = categories;
         this.director = director;
         this.description = description;
         this.poster = poster;

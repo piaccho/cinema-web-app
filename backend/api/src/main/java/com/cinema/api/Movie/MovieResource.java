@@ -11,18 +11,19 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/movies")
 public class MovieResource {
-    private MovieService movieService;
-    public MovieResource (MovieRepository movieRepository){
+    private final MovieService movieService;
+
+    public MovieResource(MovieRepository movieRepository) {
         this.movieService = new MovieService(movieRepository);
     }
 
     @GetMapping("/all")
-    public List<Movie> getAll(){
+    public List<Movie> getAll() {
         return movieService.getAllMovies();
     }
 
     @GetMapping("/{movieId}")
-    public Optional<Movie> getMovieById(@PathVariable("movieId") String movieId){
+    public Optional<Movie> getMovieById(@PathVariable("movieId") String movieId) {
         return movieService.getMovieById(movieId);
     }
 }

@@ -1,7 +1,7 @@
 package com.cinema.api.dbConfig;
 
-import com.cinema.api.Genre.Genre;
-import com.cinema.api.Genre.GenreRepository;
+import com.cinema.api.Category.Category;
+import com.cinema.api.Category.CategoryRepository;
 import com.cinema.api.Movie.Movie;
 import com.cinema.api.Movie.MovieRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -17,30 +17,30 @@ import java.util.List;
 @Configuration
 public class MongoDbConfig {
     @Bean
-    CommandLineRunner runner(MovieRepository movieRepository, GenreRepository genreRepository, MongoTemplate mongoTemplate) {
+    CommandLineRunner runner(MovieRepository movieRepository, CategoryRepository categoryRepository, MongoTemplate mongoTemplate) {
         return args -> {
 
             ////////
             // TEST
             ////////
-            genreRepository.deleteAll();
+            categoryRepository.deleteAll();
             movieRepository.deleteAll();
 
-            Genre genre1 = new Genre("Crime");
-            Genre genre2 = new Genre("Drama");
-            genreRepository.findByName(genre1.getName())
+            Category category1 = new Category("Crime");
+            Category category2 = new Category("Drama");
+            categoryRepository.findByName(category1.getName())
                     .ifPresentOrElse(s -> System.out.println("Genre" + s + " already exists"),
-                            () -> genreRepository.insert(genre1)
+                            () -> categoryRepository.insert(category1)
                     );
-            genreRepository.findByName(genre2.getName())
+            categoryRepository.findByName(category2.getName())
                     .ifPresentOrElse(s -> System.out.println("Genre" + s + " already exists"),
-                            () -> genreRepository.insert(genre2)
+                            () -> categoryRepository.insert(category2)
                     );
 
 
             Movie movie = new Movie(
                     "The Godfather",
-                    List.of(genre1, genre2),
+                    List.of(category1, category2),
                     "Francis Ford Coppola",
                     "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
                     "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
