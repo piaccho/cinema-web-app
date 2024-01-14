@@ -1,0 +1,141 @@
+Ten kod był używany do dodawania do bazy w DBConfigure
+
+    Dodawanie kategorii
+//            // Wczytaj dane z pliku JSON
+//            List<CategoryData> categoryDataList = objectMapper.readValue(
+//                    new File("to_insert/genres.json"),
+//                    new TypeReference<List<CategoryData>>() {}
+//            );
+//
+//            for (CategoryData categoryData : categoryDataList) {
+//                Category category = new Category(categoryData.getName());
+//                categoryRepository.findByName(category.getName())
+//                        .ifPresentOrElse(
+//                                s -> System.out.println("Genre " + s + " already exists"),
+//                                () -> categoryRepository.insert(category)
+//                        );
+//            }
+
+
+
+
+    Dodawanie filmów
+// Wczytaj dane z pliku JSON dla filmów
+//            List<MovieData> movieDataList = objectMapper.readValue(
+////                    new File("to_insert/popularMovies.json"),
+//                    new File("to_insert/upcomingMovies.json"),
+//                    new TypeReference<List<MovieData>>() {}
+//            );
+//            for (MovieData movieData : movieDataList) {
+//                Movie movie = new Movie(
+//                        movieData.getTitle(),
+//                        mapGenres(movieData.getGenres(), categoryRepository),
+//                        movieData.getOverview(),
+//                        movieData.getImage(),
+//                        movieData.getReleaseDate(),
+//                        String.valueOf(movieData.getVoteAverage()),
+//                        (int) movieData.getPopularity(),
+//                        LocalDateTime.now()
+//                );
+//
+//                movieRepository.insert(movie);
+//            }
+//
+//
+//
+//    private List<Category> mapGenres(List<String> genres, CategoryRepository categoryRepository) {
+//        return genres.stream()
+//                .map(genreName -> {
+//                    Category category = new Category(genreName);
+//                    return categoryRepository.findByName(category.getName())
+//                            .orElseGet(() -> categoryRepository.insert(category));
+//                })
+//                .collect(Collectors.toList());
+//    }
+
+    Dodawanie sal
+//            hallRepository.deleteAll();
+//            List<HallData> hallsData = generateSampleHallsData();
+//            saveToJsonFile(hallsData, "to_insert/halls.json");
+//            addHallsToDatabase(hallsData, hallRepository);
+
+
+//    private List<HallData> generateSampleHallsData() {
+//        List<HallData> hallsData = new ArrayList<>();
+//
+//        for (int i = 1; i <= 9; i++) {
+//            HallData hallData = new HallData();
+//            hallData.setSeatsNumber(100); // Przykładowa liczba miejsc w sali
+//            hallData.setPlace("Sala numer " + i / 3 + ". Piętro " + i % 3);
+//            hallsData.add(hallData);
+//        }
+//
+//        return hallsData;
+//    }
+//
+//    private void saveToJsonFile(List<HallData> hallsData, String fileName) throws IOException, IOException {
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        objectMapper.writeValue(Paths.get(fileName).toFile(), hallsData);
+//    }
+//
+//    private void addHallsToDatabase(List<HallData> hallsData, HallRepository hallRepository) {
+//        List<Hall> halls = new ArrayList<>();
+//
+//        for (HallData hallData : hallsData) {
+//            Hall hall = new Hall();
+//            hall.setSeatsNumber(hallData.getSeatsNumber());
+//            hall.setPlace(hallData.getPlace());
+//            halls.add(hall);
+//        }
+//
+//        hallRepository.saveAll(halls);
+//    }
+
+    Dodawanie seansów
+
+//  List<ShowingData> showingDataList = generateSampleShowingData(movieRepository.findAll(), hallRepository.findAll());
+//  addShowingToDatabase(showingDataList, showingRepository);
+
+//    private List<ShowingData> generateSampleShowingData(List<Movie> movies, List<Hall> halls) {
+//        List<ShowingData> showingDataList = new ArrayList<>();
+//        Random random = new Random();
+//        LocalDateTime currentDateTime = LocalDateTime.now();
+//        List<String> types = Arrays.asList("Subtitles", "Dubbing", "Voice-over");
+//
+//        for (int i = 0; i < 15; i++) {
+//            Movie movie = movies.get(random.nextInt(movies.size()));
+//            for (int k = 1; k < 6; k++) {
+//                ShowingData showingData = new ShowingData();
+//                showingData.setMovie(movie);
+//                showingData.setHall(halls.get(random.nextInt(halls.size())));
+//                LocalDate releaseDate = LocalDate.parse(movie.getReleaseDate());
+//                LocalDate newDate = releaseDate.plusDays((k * 14));
+//                showingData.setDate(newDate);
+//                showingData.setDatetime(newDate.atTime((25 - k) % 24, 0, 0));
+//                showingData.setFreeSeats(100); // Przykładowa liczba wolnych miejsc
+//                showingData.setType(types.get(random.nextInt(types.size()))); // Przykładowy typ
+//                showingData.setPrice((random.nextInt(7) + 3) * 5); // Przykładowa cena biletu
+//                showingDataList.add(showingData);
+//            }
+//        }
+//
+//        return showingDataList;
+//    }
+//
+//    private void addShowingToDatabase(List<ShowingData> showingDataList, ShowingRepository showingRepository) {
+//        List<Showing> showings = new ArrayList<>();
+//
+//        for (ShowingData showingData : showingDataList) {
+//            Showing showing = new Showing();
+//            showing.setMovie(showingData.getMovie());
+//            showing.setHall(showingData.getHall());
+//            showing.setDate(showingData.getDate());
+//            showing.setDatetime(showingData.getDatetime());
+//            showing.setFreeSeats(showingData.getFreeSeats());
+//            showing.setType(showingData.getType());
+//            showing.setPrice(showingData.getPrice());
+//            showings.add(showing);
+//        }
+//
+//        showingRepository.saveAll(showings);
+//    }
