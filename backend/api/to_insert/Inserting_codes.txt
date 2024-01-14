@@ -139,3 +139,32 @@ Ten kod był używany do dodawania do bazy w DBConfigure
 //
 //        showingRepository.saveAll(showings);
 //    }
+
+
+
+    Dodawanie userów
+Optional<Movie> movie1 = movieRepository.findByMovieId("65a3f9dfd9b7e11f7214611a");
+Optional<Movie> movie2 = movieRepository.findByMovieId("65a3fa2aab0c80254c34d7ac");
+System.out.println(movie1);
+System.out.println(movie2);
+if (movie1.isPresent() && movie2.isPresent()) {
+    List<Movie> toWatchMovies = Arrays.asList(movie1.get(), movie2.get());
+
+    User user1 = new User();
+    user1.setType("user");
+    user1.setLogin("user");
+    user1.setPassword("user");
+    user1.setName("Tadeusz");
+    user1.setLastname("Norek");
+    user1.setTo_watch(toWatchMovies);
+
+    userRepository.save(user1);
+}
+
+User user2 = new User();
+user2.setType("admin");
+user2.setLogin("admin");
+user2.setPassword("admin");
+user2.setName("Karol");
+user2.setLastname("Krawczyk");
+userRepository.save(user2);
