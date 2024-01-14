@@ -1,0 +1,348 @@
+[
+    {
+        "id": 569094,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Science Fiction"
+        ],
+        "title": "Spider-Man: Across the Spider-Verse",
+        "originalTitle": "Spider-Man: Across the Spider-Verse",
+        "releaseDate": "2024-05-31",
+        "image": "https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+        "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+        "voteAverage": 8.4,
+        "voteCount": 5484,
+        "popularity": 324.639,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 1050035,
+        "adult": false,
+        "genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "title": "Monster",
+        "originalTitle": "怪物",
+        "releaseDate": "2024-06-02",
+        "image": "https://image.tmdb.org/t/p/w500/uCxeoP5DKOt5ovEsY4jerxwbcbe.jpg",
+        "overview": "When her young son Minato starts to behave strangely, his mother feels that there is something wrong. Discovering that a teacher is responsible, she storms into the school demanding to know what's going on. But as the story unfolds through the eyes of mother, teacher, and child, the truth gradually emerges.",
+        "voteAverage": 8.21,
+        "voteCount": 112,
+        "popularity": 145.173,
+        "originalLanguage": "ja"
+    },
+    {
+        "id": 678512,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Drama"
+        ],
+        "title": "Sound of Freedom",
+        "originalTitle": "Sound of Freedom",
+        "releaseDate": "2024-07-03",
+        "image": "https://image.tmdb.org/t/p/w500/qA5kPYZA7FkVvqcEfJRoOy4kpHg.jpg",
+        "overview": "The story of Tim Ballard, a former US government agent, who quits his job in order to devote his life to rescuing children from global sex traffickers.",
+        "voteAverage": 8.065,
+        "voteCount": 1769,
+        "popularity": 209.23,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 792307,
+        "adult": false,
+        "genres": [
+            "Comedy",
+            "Romance",
+            "Science Fiction"
+        ],
+        "title": "Poor Things",
+        "originalTitle": "Poor Things",
+        "releaseDate": "2024-11-21",
+        "image": "https://image.tmdb.org/t/p/w500/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg",
+        "overview": "Brought back to life by an unorthodox scientist, a young woman runs off with a debauched lawyer on a whirlwind adventure across the continents. Free from the prejudices of her times, she grows steadfast in her purpose to stand for equality and liberation.",
+        "voteAverage": 8.042,
+        "voteCount": 95,
+        "popularity": 174.041,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 915935,
+        "adult": false,
+        "genres": [
+            "Drama",
+            "Mystery"
+        ],
+        "title": "Anatomy of a Fall",
+        "originalTitle": "Anatomie d'une chute",
+        "releaseDate": "2024-08-13",
+        "image": "https://image.tmdb.org/t/p/w500/kQs6keheMwCxJxrzV83VUwFtHkB.jpg",
+        "overview": "A woman is suspected of her husband’s murder, and their blind son faces a moral dilemma as the sole witness.",
+        "voteAverage": 7.73,
+        "voteCount": 604,
+        "popularity": 124.816,
+        "originalLanguage": "fr"
+    },
+    {
+        "id": 1061181,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Adventure",
+            "War"
+        ],
+        "title": "Kingdom III: The Flame of Destiny",
+        "originalTitle": "キングダム 運命の炎",
+        "releaseDate": "2024-07-28",
+        "image": "https://image.tmdb.org/t/p/w500/60eYZkkksgKeeAV8fAAKQslZZnH.jpg",
+        "overview": "To defend their kingdom against a sudden invasion, a mighty general returns to the battlefield alongside a war orphan, now grown up, who dreams of glory.",
+        "voteAverage": 7.6,
+        "voteCount": 86,
+        "popularity": 214.183,
+        "originalLanguage": "ja"
+    },
+    {
+        "id": 866398,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Thriller"
+        ],
+        "title": "The Beekeeper",
+        "originalTitle": "The Beekeeper",
+        "releaseDate": "2024-01-10",
+        "image": "https://image.tmdb.org/t/p/w500/mlHDJE9sE3quNRr6bVULfOrIU7S.jpg",
+        "overview": "One man’s campaign for vengeance takes on national stakes after he is revealed to be a former operative of a powerful and clandestine organization known as Beekeepers.",
+        "voteAverage": 7.551,
+        "voteCount": 39,
+        "popularity": 562.045,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 940551,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Adventure",
+            "Animation",
+            "Comedy",
+            "Family"
+        ],
+        "title": "Migration",
+        "originalTitle": "Migration",
+        "releaseDate": "2024-12-06",
+        "image": "https://image.tmdb.org/t/p/w500/ldfCF9RhR40mppkzmftxapaHeTo.jpg",
+        "overview": "After a migrating duck family alights on their pond with thrilling tales of far-flung places, the Mallard family embarks on a family road trip, from New England, to New York City, to tropical Jamaica.",
+        "voteAverage": 7.4,
+        "voteCount": 103,
+        "popularity": 397.295,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 508883,
+        "adult": false,
+        "genres": [
+            "Adventure",
+            "Animation",
+            "Fantasy"
+        ],
+        "title": "The Boy and the Heron",
+        "originalTitle": "君たちはどう生きるか",
+        "releaseDate": "2024-07-14",
+        "image": "https://image.tmdb.org/t/p/w500/y9xS5NQTBnFjDoXhSFQeGxlmkoM.jpg",
+        "overview": "While the Second World War rages, the teenage Mahito, haunted by his mother's tragic death, is relocated from Tokyo to the serene rural home of his new stepmother Natsuko, a woman who bears a striking resemblance to the boy's mother. As he tries to adjust, this strange new world grows even stranger following the appearance of a persistent gray heron, who perplexes and bedevils Mahito, dubbing him the \"long-awaited one.\"",
+        "voteAverage": 7.389,
+        "voteCount": 647,
+        "popularity": 209.31,
+        "originalLanguage": "ja"
+    },
+    {
+        "id": 744857,
+        "adult": false,
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "title": "When Evil Lurks",
+        "originalTitle": "Cuando acecha la maldad",
+        "releaseDate": "2024-10-05",
+        "image": "https://image.tmdb.org/t/p/w500/2gimJ06p9tVR4P6jacZWcLcNEwA.jpg",
+        "overview": "Residents of a small rural town discover that a demon is about to be born among them. They desperately try to escape before the evil is born, but it may be too late.",
+        "voteAverage": 7.378,
+        "voteCount": 370,
+        "popularity": 196.391,
+        "originalLanguage": "es"
+    },
+    {
+        "id": 1072790,
+        "adult": false,
+        "genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "title": "Anyone But You",
+        "originalTitle": "Anyone But You",
+        "releaseDate": "2024-12-21",
+        "image": "https://image.tmdb.org/t/p/w500/yRt7MGBElkLQOYRvLTT1b3B1rcp.jpg",
+        "overview": "After an amazing first date, Bea and Ben’s fiery attraction turns ice cold — until they find themselves unexpectedly reunited at a destination wedding in Australia. So they do what any two mature adults would do: pretend to be a couple.",
+        "voteAverage": 7.333,
+        "voteCount": 57,
+        "popularity": 195.759,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 787699,
+        "adult": false,
+        "genres": [
+            "Comedy",
+            "Family",
+            "Fantasy"
+        ],
+        "title": "Wonka",
+        "originalTitle": "Wonka",
+        "releaseDate": "2024-12-06",
+        "image": "https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+        "overview": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+        "voteAverage": 7.107,
+        "voteCount": 957,
+        "popularity": 701.384,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 1053592,
+        "adult": false,
+        "genres": [
+            "Action",
+            "Drama",
+            "Thriller"
+        ],
+        "title": "All the Names of God",
+        "originalTitle": "Todos los nombres de Dios",
+        "releaseDate": "2024-09-15",
+        "image": "https://image.tmdb.org/t/p/w500/n15gfcgwV0LVPSobrayZcFHcwN6.jpg",
+        "overview": "After being implicated in a terrorist attack, Santi, a taxi driver, is taken hostage by one of the perpetrators.",
+        "voteAverage": 7.07,
+        "voteCount": 43,
+        "popularity": 341.893,
+        "originalLanguage": "es"
+    },
+    {
+        "id": 1192578,
+        "adult": false,
+        "genres": [
+            "Documentary"
+        ],
+        "title": "Soccer Soul",
+        "originalTitle": "Elijo creer",
+        "releaseDate": "2024-12-07",
+        "image": "https://image.tmdb.org/t/p/w500/eLbDSu14EZ2VldIgDDGrt5pJkoL.jpg",
+        "overview": "It narrates the epic title obtained by the Argentine National Team in the World Cup Qatar 2022 with testimonies of the protagonists, told from the intimacy and in first person.",
+        "voteAverage": 7,
+        "voteCount": 5,
+        "popularity": 155.809,
+        "originalLanguage": "es"
+    },
+    {
+        "id": 1020006,
+        "adult": false,
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "title": "Priscilla",
+        "originalTitle": "Priscilla",
+        "releaseDate": "2024-10-27",
+        "image": "https://image.tmdb.org/t/p/w500/uDCeELWWpsNq7ErM61Yuq70WAE9.jpg",
+        "overview": "When teenage Priscilla Beaulieu meets Elvis Presley at a party, the man who is already a meteoric rock-and-roll superstar becomes someone entirely unexpected in private moments: a thrilling crush, an ally in loneliness, a vulnerable best friend.",
+        "voteAverage": 6.9,
+        "voteCount": 204,
+        "popularity": 512.879,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 673593,
+        "adult": false,
+        "genres": [
+            "Comedy"
+        ],
+        "title": "Mean Girls",
+        "originalTitle": "Mean Girls",
+        "releaseDate": "2024-01-10",
+        "image": "https://image.tmdb.org/t/p/w500/fbbj3viSUDEGT1fFFMNpHP1iUjw.jpg",
+        "overview": "New student Cady Heron is welcomed into the top of the social food chain by the elite group of popular girls called ‘The Plastics,’ ruled by the conniving queen bee Regina George and her minions Gretchen and Karen. However, when Cady makes the major misstep of falling for Regina’s ex-boyfriend Aaron Samuels, she finds herself prey in Regina’s crosshairs. As Cady sets to take down the group’s apex predator with the help of her outcast friends Janis and Damian, she must learn how to stay true to herself while navigating the most cutthroat jungle of all: high school.",
+        "voteAverage": 6.833,
+        "voteCount": 30,
+        "popularity": 280.8,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 1143183,
+        "adult": false,
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "title": "Rewind",
+        "originalTitle": "Rewind",
+        "releaseDate": "2024-12-25",
+        "image": "https://image.tmdb.org/t/p/w500/i8UjdAwezeFHHR4opNb3LxDCQWC.jpg",
+        "overview": "Mary loves John for as long as she can remember. But after years of marriage, John's priorities shift, leading to a strained relationship with Mary, which causes a tragic accident that takes away Mary's life. Until one day, John gets an extraordinary proposition - to rewind time and save the life of the woman he loves.",
+        "voteAverage": 6.8,
+        "voteCount": 18,
+        "popularity": 458.418,
+        "originalLanguage": "tl"
+    },
+    {
+        "id": 1075175,
+        "adult": false,
+        "genres": [
+            "Drama"
+        ],
+        "title": "How to Have Sex",
+        "originalTitle": "How to Have Sex",
+        "releaseDate": "2024-11-02",
+        "image": "https://image.tmdb.org/t/p/w500/rafwrzslLb203hQFIU8s0yRk0Qy.jpg",
+        "overview": "Three British teenage girls go on a rites-of-passage holiday—drinking, clubbing and hooking up, in what should be the best summer of their lives.",
+        "voteAverage": 6.51,
+        "voteCount": 105,
+        "popularity": 175.377,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 853387,
+        "adult": false,
+        "genres": [
+            "Horror"
+        ],
+        "title": "Lord of Misrule",
+        "originalTitle": "Lord of Misrule",
+        "releaseDate": "2024-10-26",
+        "image": "https://image.tmdb.org/t/p/w500/eCNJuGsCNdf2yf4F3UcDg1WZTbo.jpg",
+        "overview": "When the daughter of the town's new priest goes missing during the harvest festival, a desperate search begins, uncovering the town's dark history and resurfacing tales of a mysterious, malevolent spirit that demands sacrifice.",
+        "voteAverage": 5.971,
+        "voteCount": 17,
+        "popularity": 325.198,
+        "originalLanguage": "en"
+    },
+    {
+        "id": 1072342,
+        "adult": false,
+        "genres": [
+            "Horror",
+            "Thriller"
+        ],
+        "title": "Night Swim",
+        "originalTitle": "Night Swim",
+        "releaseDate": "2024-01-03",
+        "image": "https://image.tmdb.org/t/p/w500/gSkfBGdxdialBMM7P02V4hcI6Ij.jpg",
+        "overview": "Forced into early retirement by a degenerative illness, former baseball player Ray Waller moves into a new house with his wife and two children. He hopes that the backyard swimming pool will be fun for the kids and provide physical therapy for himself. However, a dark secret from the home's past soon unleashes a malevolent force that drags the family into the depths of inescapable terror.",
+        "voteAverage": 5.371,
+        "voteCount": 35,
+        "popularity": 164.96,
+        "originalLanguage": "en"
+    }
+]
