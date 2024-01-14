@@ -21,7 +21,6 @@ public class Movie {
     private String movieId;
     private String title;
     private List<Category> categories;
-    private String director;
     private String description;
     private String poster;
     private String releaseDate;
@@ -29,10 +28,9 @@ public class Movie {
     private int runtime;
     private LocalDateTime createdAt;
 
-    public Movie(String title, List<Category> categories, String director, String description, String poster, String releaseDate, String rating, int runtime, LocalDateTime createdAt) {
+    public Movie(String title, List<Category> categories,  String description, String poster, String releaseDate, String rating, int runtime, LocalDateTime createdAt) {
         this.title = title;
         this.categories = categories;
-        this.director = director;
         this.description = description;
         this.poster = poster;
         this.releaseDate = releaseDate;

@@ -1,5 +1,6 @@
 package com.cinema.api.Category;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +14,9 @@ import java.util.Optional;
 public class CategoryResource {
     private final CategoryService categoryService;
 
-    public CategoryResource(CategoryRepository categoryRepository) {
-        this.categoryService = new CategoryService(categoryRepository);
+    @Autowired
+    public CategoryResource(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
     @GetMapping("/all")

@@ -1,6 +1,7 @@
 package com.cinema.api.Hall;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/halls")
 public class HallResource {
     private final HallService hallService;
-
+    @Autowired
     public HallResource(HallRepository hallRepository) {
         this.hallService = new HallService(hallRepository);
     }
