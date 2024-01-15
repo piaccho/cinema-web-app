@@ -1,8 +1,9 @@
-import React from 'react';
-import { TextField, Button } from '@mui/material';
+import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+import { useNavigate } from 'react-router-dom';
+import { Box, IconButton } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -19,44 +20,54 @@ const Search = styled('div')(({ theme }) => ({
     },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     width: '100%',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        paddingLeft: `calc(1em + ${theme.spacing(1)})`,
         transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
-            width: '12ch',
+            width: '15ch',
             '&:focus': {
-                width: '20ch',
+                width: '30ch',
             },
         },
     },
 }));
 
 const SearchBar: React.FC = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter' && searchQuery !== '') {
+            navigate(`/movies/search/${searchQuery}`);
+        }
+    };
+    const handleIconClick = () => {
+        if (searchQuery !== '') {
+            navigate(`/movies/search/${searchQuery}`);
+        }
+    };
+
+
     return (
-        <Search>
-            <SearchIconWrapper>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Search>
+                <StyledInputBase
+                    placeholder="Search movie…"
+                    inputProps={{ 'aria-label': 'search' }}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearch}
+                />
+            </Search>
+            <IconButton onClick={handleIconClick} size="large" aria-label="search" color="inherit">
                 <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-                placeholder="Search movie…"
-                inputProps={{ 'aria-label': 'search' }}
-            />
-        </Search>
+            </IconButton>
+        </Box>
     );
 };
 

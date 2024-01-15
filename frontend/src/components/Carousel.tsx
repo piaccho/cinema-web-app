@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Box } from '@mui/material';
 import { CarouselProps } from '../types';
+import { Link } from 'react-router-dom';
 
 const Carousel: React.FC<CarouselProps> = ({ elements }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,6 +26,7 @@ const Carousel: React.FC<CarouselProps> = ({ elements }) => {
                         width="100%"
                         flexShrink={0}
                         marginLeft={index === 0 ? `-${currentIndex * 100}%` : undefined}
+                        sx={{ textDecoration: 'none' }}
                     >
                         {element}
                     </Box>

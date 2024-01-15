@@ -1,15 +1,21 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
-import { Link } from 'react-router-dom';
 import { Movie } from '../types';
 import formatDate from '../util/formatDate';
 
-export const CarouselItem: React.FC<{ movie: Movie }> = ({ movie }) => {
+const MovieItem: React.FC<{ movie: Movie }> = ({ movie }) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/movies/${movie.id}`, { state: { movie } });
+    };
+    
     return (
-        <Card sx={{ maxWidth: 250, bgcolor: 'white' }}>
+        <Card sx={{ maxWidth: 250, bgcolor: 'white', cursor: 'pointer'}} onClick={handleClick}>
             <CardMedia
                 component="img"
                 image={movie.image}
@@ -20,14 +26,11 @@ export const CarouselItem: React.FC<{ movie: Movie }> = ({ movie }) => {
                     {movie.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Premiera: {formatDate(movie.releaseDate)}
+                    Premiere: {formatDate(movie.releaseDate)}
                 </Typography>
             </CardContent>
         </Card>
-        // <Link to={`/movie/${movie.title}`} style={{ textDecoration: 'none' }}>
-            
-        // </Link>
     );
 }
 
-export default CarouselItem;
+export default MovieItem;

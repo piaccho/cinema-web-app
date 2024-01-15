@@ -1,22 +1,50 @@
 import { createTheme } from '@mui/material/styles';
 import { orange, red, grey, green } from '@mui/material/colors';
 
+
+
 // A custom theme for this app
 const theme = createTheme({
-  // palette https://www.colorhunt.co/palette/37306b66347f9e4784d27685
-  // #37306B
-  // #66347F
-  // #9E4784
-  // #D27685
+  // palette 1
+      // primary: {
+      //   main: "#2F4460",
+      //   light: "#5175A4",
+      //   dark: "#141D29",
+      //   contrastText: "#FFFFFF"
+      // },
+      // secondary: {
+      //   main: "#BFCDE0",
+      //   light: "#FEFCFD",
+      //   dark: "#7593BD",
+      //   contrastText: "#000000"
+      // },
+ 
+  // palette 2
+      // primary: {
+      //   main: "#634832",
+      //   light: "#967259",
+      //   dark: "#38220f",
+      //   contrastText: "#FFFFFF"
+      // },
+      // secondary: {
+      //   main: "#dbc1ac",
+      //   light: "#ece0d1",
+      //   dark: "#967259",
+      //   contrastText: "#000000"
+      // },
 
   palette: {
     primary: {
-      main: "#37306B", 
-      light: "#FFCDB2",
-      dark: "#D6875",
+      main: "#634832", 
+      light: "#967259",
+      dark: "#38220f",
+      contrastText: "#FFFFFF"
     },
     secondary: {
-      main: '#19857b',
+      main: "#dbc1ac",
+      light: "#ece0d1",
+      dark: "#967259",
+      contrastText: "#000000"
     },
     error: {
       main: red.A400,
@@ -29,7 +57,7 @@ const theme = createTheme({
     },
     success: {
       main: green.A400,
-    },
+    }
   },
   typography: {
     fontFamily: [
