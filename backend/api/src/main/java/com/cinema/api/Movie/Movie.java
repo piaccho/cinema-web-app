@@ -8,7 +8,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -19,23 +19,33 @@ import java.util.List;
 public class Movie {
     @Id
     private String movieId;
-    private String title;
+    private boolean adult;
     private List<Category> categories;
-    private String description;
-    private String poster;
-    private String releaseDate;
-    private String rating;
-    private int runtime;
-    private LocalDateTime createdAt;
+    private String title;
+    private String originalTitle;
+    private LocalDate releaseDate;
+    private String image;
+    private String overview;
+    private int length;
+    private float voteAverage;
+    private float voteCount;
+    private float popularity;
+    private String originalLanguage;
 
-    public Movie(String title, List<Category> categories,  String description, String poster, String releaseDate, String rating, int runtime, LocalDateTime createdAt) {
-        this.title = title;
+    public Movie(boolean adult, List<Category> categories, String title, String originalTitle,
+                 LocalDate releaseDate, String image, String overview, int length,
+                 float voteAverage, float voteCount, float popularity, String originalLanguage) {
+        this.adult = adult;
         this.categories = categories;
-        this.description = description;
-        this.poster = poster;
+        this.title = title;
+        this.originalTitle = originalTitle;
         this.releaseDate = releaseDate;
-        this.rating = rating;
-        this.runtime = runtime;
-        this.createdAt = createdAt;
+        this.image = image;
+        this.overview = overview;
+        this.length = length;
+        this.voteAverage = voteAverage;
+        this.voteCount = voteCount;
+        this.popularity = popularity;
+        this.originalLanguage = originalLanguage;
     }
 }

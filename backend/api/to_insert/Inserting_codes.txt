@@ -20,27 +20,36 @@ Ten kod był używany do dodawania do bazy w DBConfigure
 
 
     Dodawanie filmów
-// Wczytaj dane z pliku JSON dla filmów
+//            Random random = new Random();
+////            movieRepository.deleteAll();
+//            ObjectMapper objectMapper = new ObjectMapper();
+////             Wczytaj dane z pliku JSON dla filmów
 //            List<MovieData> movieDataList = objectMapper.readValue(
-////                    new File("to_insert/popularMovies.json"),
-//                    new File("to_insert/upcomingMovies.json"),
+//                    new File("to_insert/popularMovies.json"),
+////                    new File("to_insert/upcomingMovies.json"),
 //                    new TypeReference<List<MovieData>>() {}
 //            );
+//            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//
 //            for (MovieData movieData : movieDataList) {
+//                LocalDate releaseDate = LocalDate.parse(movieData.getReleaseDate(), dateFormatter);
 //                Movie movie = new Movie(
-//                        movieData.getTitle(),
+//                        movieData.isAdult(),
 //                        mapGenres(movieData.getGenres(), categoryRepository),
-//                        movieData.getOverview(),
+//                        movieData.getTitle(),
+//                        movieData.getOriginalTitle(),
+//                        releaseDate,
 //                        movieData.getImage(),
-//                        movieData.getReleaseDate(),
-//                        String.valueOf(movieData.getVoteAverage()),
-//                        (int) movieData.getPopularity(),
-//                        LocalDateTime.now()
+//                        movieData.getOverview(),
+//                        random.nextInt(120 - 90 + 1) + 90,  // Może być zmienione na np. random.nextInt(31) + 90
+//                        (float) movieData.getVoteAverage(),
+//                        (float) movieData.getVoteCount(),
+//                        (float) movieData.getPopularity(),
+//                        String.valueOf(movieData.getOriginalLanguage())
 //                );
 //
 //                movieRepository.insert(movie);
 //            }
-//
 //
 //
 //    private List<Category> mapGenres(List<String> genres, CategoryRepository categoryRepository) {
@@ -54,117 +63,135 @@ Ten kod był używany do dodawania do bazy w DBConfigure
 //    }
 
     Dodawanie sal
-//            hallRepository.deleteAll();
-//            List<HallData> hallsData = generateSampleHallsData();
-//            saveToJsonFile(hallsData, "to_insert/halls.json");
-//            addHallsToDatabase(hallsData, hallRepository);
+        return args -> {
+            hallRepository.deleteAll();
+            List<HallData> hallsData = generateSampleHallsData();
+            saveToJsonFile(hallsData, "to_insert/halls.json");
+            addHallsToDatabase(hallsData, hallRepository);
+            System.out.println("--------");
+        };
+    }
 
+    private List<HallData> generateSampleHallsData() {
+        List<HallData> hallsData = new ArrayList<>();
+        for (int i = 1; i <= 9; i++) {
+            HallData hallData = new HallData();
+            hallData.setSeatsNumber(100); // Przykładowa liczba miejsc w sali
+            hallData.setHallNumber(i);
+            hallsData.add(hallData);
+        }
 
-//    private List<HallData> generateSampleHallsData() {
-//        List<HallData> hallsData = new ArrayList<>();
-//
-//        for (int i = 1; i <= 9; i++) {
-//            HallData hallData = new HallData();
-//            hallData.setSeatsNumber(100); // Przykładowa liczba miejsc w sali
-//            hallData.setPlace("Sala numer " + i / 3 + ". Piętro " + i % 3);
-//            hallsData.add(hallData);
-//        }
-//
-//        return hallsData;
-//    }
-//
-//    private void saveToJsonFile(List<HallData> hallsData, String fileName) throws IOException, IOException {
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.writeValue(Paths.get(fileName).toFile(), hallsData);
-//    }
-//
-//    private void addHallsToDatabase(List<HallData> hallsData, HallRepository hallRepository) {
-//        List<Hall> halls = new ArrayList<>();
-//
-//        for (HallData hallData : hallsData) {
-//            Hall hall = new Hall();
-//            hall.setSeatsNumber(hallData.getSeatsNumber());
-//            hall.setPlace(hallData.getPlace());
-//            halls.add(hall);
-//        }
-//
-//        hallRepository.saveAll(halls);
-//    }
+        return hallsData;
+    }
+
+    private void saveToJsonFile(List<HallData> hallsData, String fileName) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(Paths.get(fileName).toFile(), hallsData);
+    }
+
+    private void addHallsToDatabase(List<HallData> hallsData, HallRepository hallRepository) {
+        List<Hall> halls = new ArrayList<>();
+
+        for (HallData hallData : hallsData) {
+            Hall hall = new Hall();
+            hall.setSeatsNumber(hallData.getSeatsNumber());
+            hall.setHallNumber(hallData.getHallNumber());
+            halls.add(hall);
+        }
+
+        hallRepository.saveAll(halls);
+    }
 
     Dodawanie seansów
 
-//  List<ShowingData> showingDataList = generateSampleShowingData(movieRepository.findAll(), hallRepository.findAll());
-//  addShowingToDatabase(showingDataList, showingRepository);
+return args -> {
+            showingRepository.deleteAll();
+              List<ShowingData> showingDataList = generateSampleShowingData(movieRepository.findAll(), hallRepository.findAll());
+              addShowingToDatabase(showingDataList, showingRepository);
+            System.out.println("--------");
+        };
+    }
+    private List<ShowingData> generateSampleShowingData(List<Movie> movies, List<Hall> halls) {
+        List<ShowingData> showingDataList = new ArrayList<>();
+        Random random = new Random();
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        List<String> types = Arrays.asList("Subtitles", "Dubbing", "Voice-over");
 
-//    private List<ShowingData> generateSampleShowingData(List<Movie> movies, List<Hall> halls) {
-//        List<ShowingData> showingDataList = new ArrayList<>();
-//        Random random = new Random();
-//        LocalDateTime currentDateTime = LocalDateTime.now();
-//        List<String> types = Arrays.asList("Subtitles", "Dubbing", "Voice-over");
-//
-//        for (int i = 0; i < 15; i++) {
-//            Movie movie = movies.get(random.nextInt(movies.size()));
-//            for (int k = 1; k < 6; k++) {
-//                ShowingData showingData = new ShowingData();
-//                showingData.setMovie(movie);
-//                showingData.setHall(halls.get(random.nextInt(halls.size())));
-//                LocalDate releaseDate = LocalDate.parse(movie.getReleaseDate());
-//                LocalDate newDate = releaseDate.plusDays((k * 14));
-//                showingData.setDate(newDate);
-//                showingData.setDatetime(newDate.atTime((25 - k) % 24, 0, 0));
-//                showingData.setFreeSeats(100); // Przykładowa liczba wolnych miejsc
-//                showingData.setType(types.get(random.nextInt(types.size()))); // Przykładowy typ
-//                showingData.setPrice((random.nextInt(7) + 3) * 5); // Przykładowa cena biletu
-//                showingDataList.add(showingData);
-//            }
-//        }
-//
-//        return showingDataList;
-//    }
-//
-//    private void addShowingToDatabase(List<ShowingData> showingDataList, ShowingRepository showingRepository) {
-//        List<Showing> showings = new ArrayList<>();
-//
-//        for (ShowingData showingData : showingDataList) {
-//            Showing showing = new Showing();
-//            showing.setMovie(showingData.getMovie());
-//            showing.setHall(showingData.getHall());
-//            showing.setDate(showingData.getDate());
-//            showing.setDatetime(showingData.getDatetime());
-//            showing.setFreeSeats(showingData.getFreeSeats());
-//            showing.setType(showingData.getType());
-//            showing.setPrice(showingData.getPrice());
-//            showings.add(showing);
-//        }
-//
-//        showingRepository.saveAll(showings);
-//    }
+        for (int i = 0; i < 30; i++) {
+            Movie movie = movies.get(random.nextInt(movies.size()));
+            BasicMovie basicMovie = new BasicMovie();
+            basicMovie.setMovieId(movie.getMovieId());
+            basicMovie.setCategories(movie.getCategories());
+            basicMovie.setTitle(movie.getTitle());
+            basicMovie.setLength(movie.getLength());
+            basicMovie.setImage(movie.getImage());
+            for (int k = 1; k < 9; k++) {
+                ShowingData showingData = new ShowingData();
+                showingData.setMovie(basicMovie);
+                showingData.setHall(halls.get(random.nextInt(halls.size())));
+                LocalDate releaseDate = movie.getReleaseDate();
+                LocalDate newDate = releaseDate.plusDays(k*5);
+                showingData.setDatetime(newDate.atTime((25 - k) % 24, 0, 0));
+                showingData.setFreeSeats(100); // Przykładowa liczba wolnych miejsc
+                showingData.setType(types.get(random.nextInt(types.size()))); // Przykładowy typ
+                showingData.setPrice((random.nextInt(7) + 3) * 5); // Przykładowa cena biletu
+                showingDataList.add(showingData);
+            }
+        }
+
+        return showingDataList;
+    }
+
+    private void addShowingToDatabase(List<ShowingData> showingDataList, ShowingRepository showingRepository) {
+        List<Showing> showings = new ArrayList<>();
+
+        for (ShowingData showingData : showingDataList) {
+            Showing showing = new Showing();
+            showing.setMovie(showingData.getMovie());
+            showing.setHall(showingData.getHall());
+            showing.setDatetime(showingData.getDatetime());
+            showing.setFreeSeats(showingData.getFreeSeats());
+            showing.setType(showingData.getType());
+            showing.setPrice(showingData.getPrice());
+            showings.add(showing);
+        }
+
+        showingRepository.saveAll(showings);
+    }
+
+
 
 
 
     Dodawanie userów
-Optional<Movie> movie1 = movieRepository.findByMovieId("65a3f9dfd9b7e11f7214611a");
-Optional<Movie> movie2 = movieRepository.findByMovieId("65a3fa2aab0c80254c34d7ac");
-System.out.println(movie1);
-System.out.println(movie2);
-if (movie1.isPresent() && movie2.isPresent()) {
-    List<Movie> toWatchMovies = Arrays.asList(movie1.get(), movie2.get());
+            userRepository.deleteAll();
+            Optional<Movie> movie1 = movieRepository.findByTitle("Freelance");
+            Optional<Movie> movie2 = movieRepository.findByTitle("Home Alone 2: Lost in New York");
+            Optional<Movie> movie3 = movieRepository.findByTitle("Soccer Soul");
+            System.out.println(movie1);
+            System.out.println(movie2);
+            System.out.println(movie3);
+            if (movie1.isPresent() && movie2.isPresent() && movie3.isPresent()) {
+                List<Movie> toWatchMovies = Arrays.asList(movie1.get(), movie2.get(), movie3.get());
 
-    User user1 = new User();
-    user1.setType("user");
-    user1.setLogin("user");
-    user1.setPassword("user");
-    user1.setName("Tadeusz");
-    user1.setLastname("Norek");
-    user1.setTo_watch(toWatchMovies);
+                User user1 = new User();
+                user1.setType("user");
+                user1.setLogin("user");
+                user1.setPassword("user");
+                user1.setName("Tadeusz");
+                user1.setLastname("Norek");
+                user1.setTo_watch(toWatchMovies);
 
-    userRepository.save(user1);
-}
+                userRepository.save(user1);
+            }
 
-User user2 = new User();
-user2.setType("admin");
-user2.setLogin("admin");
-user2.setPassword("admin");
-user2.setName("Karol");
-user2.setLastname("Krawczyk");
-userRepository.save(user2);
+            User user2 = new User();
+            user2.setType("admin");
+            user2.setLogin("admin");
+            user2.setPassword("admin");
+            user2.setName("Karol");
+            user2.setLastname("Krawczyk");
+            userRepository.save(user2);
+            System.out.println("--------");
+        };
+    }

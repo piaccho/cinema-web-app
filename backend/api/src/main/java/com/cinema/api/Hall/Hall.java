@@ -16,10 +16,10 @@ public class Hall {
     @Id
     private String hallId;
     private int seatsNumber;
-    private String place;
+    private int hallNumber;
 
-    public Hall(int seatsNumber, String place) {
+    public Hall(int seatsNumber, int hallNumber) {
         this.seatsNumber = seatsNumber;
-        this.place = place;
+        this.hallNumber = hallNumber;
     }
 }

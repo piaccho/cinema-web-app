@@ -14,6 +14,7 @@ import java.util.Optional;
 @RequestMapping("/halls")
 public class HallResource {
     private final HallService hallService;
+
     @Autowired
     public HallResource(HallRepository hallRepository) {
         this.hallService = new HallService(hallRepository);

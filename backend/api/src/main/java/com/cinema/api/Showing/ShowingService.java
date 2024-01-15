@@ -45,6 +45,6 @@ public class ShowingService {
     }
 
     public List<Showing> getShowingsByDate(LocalDate date) {
-        return showingRepository.findByDate(date);
+        return showingRepository.findByDatetimeAfterOrderByDatetimeDesc(date.atTime(0, 0));
     }
 }

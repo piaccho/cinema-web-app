@@ -7,6 +7,5 @@ import lombok.Setter;
 @Setter
 public class HallData {
     private int seatsNumber;
-    private String place;
-
+    private int hallNumber;
 }

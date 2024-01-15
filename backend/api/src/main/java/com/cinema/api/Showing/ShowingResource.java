@@ -33,7 +33,7 @@ public class ShowingResource {
     }
 
     @GetMapping("/byDate/{date}")
-    public List<Showing> getRepertoiresByDate(@PathVariable("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+    public List<Showing> getShowingsByDate(@PathVariable("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return showingService.getShowingsByDate(date);
     }
 }
