@@ -16,7 +16,7 @@ export interface Movie {
     originalLanguage: string;
 }
 
-export interface ShowingMovie {
+export interface BasicMovie {
     id: number;
     genres: string[];
     title: string;
@@ -24,23 +24,42 @@ export interface ShowingMovie {
     length: number;
 }
 
-export interface ShowingListItem {
-    time: string;
-    hallId: number;
-    freeSeats: number;
-}
-
-export interface ShowingList {
-    id: number;
-    movie: ShowingMovie;
-    date: string;
-    type: 'sub' | 'dub' | 'voiceOver';
-    showings: ShowingListItem[];
-}
-
 export interface Genre {
     id: number;
     name: string;
+}
+
+export interface Hall {
+    id: string;
+    hallNumber: number;
+    seatsNumber: number;
+}
+
+export interface Showing {
+    id: string;
+    movie: BasicMovie;
+    hall: Hall;
+    date: Date;
+    freeSeats: number;
+    type: 'sub' | 'dub' | 'voiceOver';
+    price: number;
+}
+
+export interface Reservation {
+    id: string;
+    showing: Showing;
+    userId: string;
+}
+
+export interface User {
+    userId: string;
+    type: string;
+    login: string;
+    password: string;
+    firstname: string;
+    lastname: string;
+    to_watch: BasicMovie[];
+    reservations: Reservation[];
 }
 
 export interface CarouselProps {

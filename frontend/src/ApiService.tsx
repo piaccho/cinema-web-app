@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { API } from './config/config';
-import { Genre, Movie, ShowingList } from './types';
+import { Genre, Movie, Showing } from './types';
 
 // Klasa serwisu API
 export default class ApiService {
@@ -102,7 +102,7 @@ export default class ApiService {
             });
     }
 
-    async getShowingListsByDate(date: String): Promise<ShowingList[]> {
+    async getShowingListsByDate(date: String): Promise<Showing[]> {
         // const response = await this.api.get<Movie[]>(`${API.GET_REPERTOIRE}${date}`);
         // console.log("got movies", response.data);
         // return response.data;
@@ -113,13 +113,13 @@ export default class ApiService {
                 }
                 return response.json();
             })
-            .then((data: ShowingList[]) => {
+            .then((data: Showing[]) => {
                 console.log(`Got repertoire with ${data.length} showings`);
                 return data;
             });
     }
 
-    async getShowingListsById(id: number): Promise<ShowingList[]> {
+    async getShowingListsById(id: number): Promise<Showing[]> {
         // const response = await this.api.get<Movie[]>(`${API.GET_REPERTOIRE}${date}`);
         // console.log("got movies", response.data);
         // return response.data;
@@ -130,7 +130,7 @@ export default class ApiService {
                 }
                 return response.json();
             })
-            .then((data: ShowingList[]) => {
+            .then((data: Showing[]) => {
                 console.log(`Got ${data.length} repertoires`);
                 return data;
             });

@@ -15,14 +15,19 @@ const MovieItem: React.FC<{ movie: Movie }> = ({ movie }) => {
     };
     
     return (
-        <Card sx={{ maxWidth: 250, bgcolor: 'white', cursor: 'pointer'}} onClick={handleClick}>
+        <Card key={movie.id} sx={{ width: 240, height: 500, bgcolor: 'white', cursor: 'pointer' }} onClick={handleClick}>
             <CardMedia
+                sx={{ height: 360 }}
                 component="img"
                 image={movie.image}
                 alt={movie.title}
             />
-            <CardContent>
-                <Typography gutterBottom variant="h6" component="div">
+            <CardContent sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+            }}>
+                <Typography gutterBottom variant={movie.title.length >= 18 ? 'body1' : 'h5'} component="div">
                     {movie.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">

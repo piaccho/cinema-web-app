@@ -1,43 +1,91 @@
-import React, { useState } from 'react';
-import { Button, Box } from '@mui/material';
-import { CarouselProps } from '../types';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Slide, Box, Stack, IconButton } from "@mui/material";
+import { CarouselProps } from "../types";
+import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 
 const Carousel: React.FC<CarouselProps> = ({ elements }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [slideDirection, setSlideDirection] = useState<
+        "left" | "right" | undefined
+    >("right");
 
-    const handleMoveLeft = () => {
-        setCurrentIndex((prevIndex) => prevIndex - 1);
+    const cardsPerPage = 6;
+
+    const handleNextPage = () => {
+        setSlideDirection("left");
+        setCurrentPage((prevPage) => prevPage + 1);
     };
 
-    const handleMoveRight = () => {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
+    const handlePrevPage = () => {
+        setSlideDirection("right");
+        setCurrentPage((prevPage) => prevPage - 1);
     };
 
     return (
-        <Box display="flex" alignItems="center" overflow="hidden">
-            <Button disabled={currentIndex === 0} onClick={handleMoveLeft}>
-                Left
-            </Button>
-            <Box display="flex" flexWrap="nowrap" overflow="hidden">
-                {elements.map((element, index) => (
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                alignContent: "center",
+                justifyContent: "center",
+                height: "600px",
+                
+            }}
+        >
+            <IconButton
+                onClick={handlePrevPage}
+                disabled={currentPage === 0}
+                sx={{ margin: 5 }}
+            >
+                <NavigateBefore />
+            </IconButton>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    alignContent: "center",
+                    justifyContent: "center",
+                    height: "600px",
+                }}
+            >
+                {elements.map((card, index) => (
                     <Box
-                        key={index}
-                        width="100%"
-                        flexShrink={0}
-                        marginLeft={index === 0 ? `-${currentIndex * 100}%` : undefined}
-                        sx={{ textDecoration: 'none' }}
+                        key={`card-${index}`}
+                        sx={{
+                            width: "100%",
+                            height: "100%",
+                            display: currentPage === index ? "block" : "none",
+                        }}
                     >
-                        {element}
+                        <Slide
+                            direction={slideDirection}
+                            in={currentPage === index}
+                            timeout={1000}
+                        >
+                            <Stack
+                                spacing={2}
+                                direction="row"
+                                alignItems="center"
+                                justifyContent="center"
+                            >
+                                {elements.slice(
+                                    index * cardsPerPage,
+                                    index * cardsPerPage + cardsPerPage
+                                )}
+                            </Stack>
+                        </Slide>
                     </Box>
                 ))}
             </Box>
-            <Button
-                disabled={currentIndex === elements.length - 1}
-                onClick={handleMoveRight}
+            <IconButton
+                onClick={handleNextPage}
+                disabled={currentPage >= Math.ceil(elements.length || 0) / cardsPerPage}
+                sx={{ margin: 5 }}
             >
-                Right
-            </Button>
+                <NavigateNext />
+            </IconButton>
         </Box>
     );
 };

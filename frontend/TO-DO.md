@@ -1,9 +1,14 @@
 ### To do:
 - [ ] JWT Auth
+    - [ ] /refresh endpoint
+    - [ ] /login endpoint
+    - [ ] /register endpoint
+    - [ ] /logout endpoint
 - [ ] Routing
 - [ ] Carousel -> Movie OverView Page
 - [ ] Header Admin/Login icon
 - [ ] Pages:
+    - [ ] ChooseSeat seats visualization
     - [x] Repretoires Page
         - [x] Calendar
         - [ ] Display Repertoire (default from today)
@@ -24,6 +29,7 @@
     
 
 Minor fixes and features:
+- [ ] Split types into Model and Props
 - [x] Fix footer margin copyrights
 - [ ] Fixed Header taking space
 - [ ] Fix Footer to be sticky on bottom of parent element
@@ -36,3 +42,16 @@ Minor fixes and features:
 - [ ] Contact Page
 - [ ] Newsletter Page
 - [ ] LocationInfo Page
+
+
+Endpoints:
+- GET all movies by category
+- GET top 20 popular movies
+- GET top 20 upcoming movies
+- GET all showings by id
+- GET all showings by dacie
+- POST /register - {login, password, firstname, lastname } -> {tokenJWT} - powinien zwracać token JWT
+- POST /login - {login, password} -> {tokenJWT} - powinien zwracać token JWT
+- DELETE /logout - { tokenJWT } - powinien usuwać token JWT w bazie
+- POST /reserve - { userId, showingId } 
+- POST /addToWatch - { userId, movieId } 

@@ -26,15 +26,17 @@ const HomePage: React.FC = () => {
     }, []);
 
     return (
-        <Container maxWidth="xs" sx={{ padding: 5 }}>
+        <Container maxWidth="xs" sx={{ padding: 5, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
             {/* extract to components - CarouselSection */}
             <Typography 
                 variant="h5" 
                 color="initial" 
                 mb={2}
                 sx={{ fontWeight: 'bold', color: 'primary.light' }}
-            >Popular Movies</Typography>
-            <Carousel 
+            >
+                Popular Movies
+            </Typography>
+            <Carousel
                 elements={popularMovies.map((movie) => (
                     <MovieItem movie={movie} />
                 ))} 
@@ -46,7 +48,7 @@ const HomePage: React.FC = () => {
                 mb={2}
                 sx={{ fontWeight: 'bold', color: 'primary.light' }}
             >Upcoming Movies</Typography>
-            <Carousel 
+            <Carousel
                 elements={upcomingMovies.map((movie) => (
                     <MovieItem movie={movie} />
                 ))} 

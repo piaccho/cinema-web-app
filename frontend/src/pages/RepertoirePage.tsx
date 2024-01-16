@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ApiService from '../ApiService';
 import dayjs, { Dayjs } from 'dayjs';
 import RepertoireItem from '../components/RepertoireItem';
-import { Box, Button, Container, Divider, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';

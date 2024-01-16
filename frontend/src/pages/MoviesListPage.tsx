@@ -25,7 +25,7 @@ const MoviesListPage: React.FC<MoviesListPageProps> = ({ type }) => {
     return (
         <Container
             component="main">
-            <Container sx={{ py: 8 }} maxWidth="md">
+            <Container sx={{ py: 8 }} maxWidth="lg">
                 <Typography variant="h4" mb={3} sx={{ fontWeight: 'bold', color: 'primary.main' }}>
                     {type === 'searchQuery' ?
                         <>Search results ({movies.length}) for: <Box component="span" sx={{ color: 'secondary.dark' }}>{q}</Box></> :
@@ -35,7 +35,7 @@ const MoviesListPage: React.FC<MoviesListPageProps> = ({ type }) => {
                 </Typography>
                 <Grid container spacing={4}>
                     {movies.map((movie, index) => (
-                        <Grid item key={index} xs={12} sm={6} md={4}>
+                        <Grid item key={index} xs={12} sm={5} md={3}>
                             <MovieItem movie={movie} />
                         </Grid>
                     ))}
