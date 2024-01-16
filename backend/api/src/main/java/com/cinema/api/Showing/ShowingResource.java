@@ -30,7 +30,7 @@ public class ShowingResource {
     }
 
     @GetMapping("/movie/{movieId}")
-    public Optional<Showing> getShowingByMovieId(@PathVariable("movieId") String movieId) {
+    public List<Showing> getShowingByMovieId(@PathVariable("movieId") String movieId) {
         return showingService.getShowingByMovieId(movieId);
     }
 

@@ -36,10 +36,10 @@ export interface Hall {
 }
 
 export interface Showing {
-    id: string;
+    showingId: string;
     movie: BasicMovie;
     hall: Hall;
-    date: Date;
+    datetime: Date;
     freeSeats: number;
     type: 'sub' | 'dub' | 'voiceOver';
     price: number;
@@ -74,3 +74,8 @@ export interface MovieOverviewCardProps {
     movie: Movie;
     onButtonClick: () => void;
 }
+
+export type GroupedShowings = {
+    date: string;
+    showings: Showing[];
+};

@@ -18,7 +18,6 @@ export default class ApiService {
 
     async getPopularMovies(): Promise<Movie[]> {
         const response = await this.api.get<Movie[]>(API.GET_POPULAR_MOVIES);
-        console.log("got popular movies", response.data);
         return response.data;
         // return fetch("src/mocks/popularMovies.json")
         //     .then(response => {
@@ -35,7 +34,6 @@ export default class ApiService {
 
     async getUpcomingMovies(): Promise<Movie[]> {
         const response = await this.api.get<Movie[]>(API.GET_UPCOMING_MOVIES);
-        console.log("got upcoming movies", response.data);
         return response.data;
         // return fetch("src/mocks/upcomingMovies.json")
         //     .then(response => {
@@ -52,7 +50,6 @@ export default class ApiService {
 
     async getGenres(): Promise<Category[]> {
         const response = await this.api.get<Category[]>(API.GET_GENRES);
-        console.log("got genres:", response.data);
         return response.data;
         // return fetch("/src/mocks/genres.json")
         //     .then(response => {
@@ -91,7 +88,6 @@ export default class ApiService {
 
     async getMoviesByGenre(genreName: string): Promise<Movie[]> {
         const response = await this.api.get<Movie[]>(`${API.GET_MOVIES_BY_GENRE}${genreName}`);
-        console.log(`got movies by genre ${genreName}:`, response.data);
         return response.data;
         // return fetch("/src/mocks/actionMovies.json")
         //     .then(response => {

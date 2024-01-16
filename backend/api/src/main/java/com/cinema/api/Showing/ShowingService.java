@@ -48,7 +48,7 @@ public class ShowingService {
         return showingRepository.findByDatetimeAfterOrderByDatetimeDesc(date.atTime(0, 0));
     }
 
-    public Optional<Showing> getShowingByMovieId(String movieId) {
-        return showingRepository.findByMovieId(movieId);
+    public List<Showing> getShowingByMovieId(String movieId) {
+        return showingRepository.findByMovie_MovieId(movieId);
     }
 }

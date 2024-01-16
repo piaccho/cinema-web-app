@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Card, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import MovieOverviewCard from '../components/MovieOverviewCard';
 import { useLocation } from 'react-router-dom';
-import { ShowingList } from '../types';
+import { Showing } from '../types';
 import ApiService from '../ApiService';
 import MovieOverviewShowing from '../components/MovieOverviewShowing';
+import groupShowings from '../util/groupShowings';
 
 const MovieOverviewPage: React.FC = () => {
     const location = useLocation();
     const movie = location.state.movie;
-    const [showingLists, setShowingLists] = useState<ShowingList[]>([]);
+    const [showingList, setShowingList] = useState<Showing[]>([]);
     const apiService = new ApiService();
 
     const showingRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +23,7 @@ const MovieOverviewPage: React.FC = () => {
     
     useEffect(() => {
         const fetchShowings = async () => {
-            setShowingLists(await apiService.getShowingListsByMovieId(movie.id));
+            setShowingList(await apiService.getShowingListsByMovieId(movie.movieId));
         };
         fetchShowings();
     }, []);
@@ -35,9 +36,15 @@ const MovieOverviewPage: React.FC = () => {
                     <Typography variant="h4" mb={2} sx={{ color: 'primary.main', fontWeight: 'Bold' }}>
                         Repertoires:
                     </Typography>
-                    <Grid container spacing={4} >
-                        {showingLists.map((showingList) => (
-                            <MovieOverviewShowing showingList={showingList} key={showingList.id} />
+                    {groupShowings(showingList).length === 0 ? 
+                            <Typography variant="h6" mb={4} sx={{ color: 'primary.dark', fontWeight: 'Bold' }}>
+                                No showings available
+                            </Typography>
+                            : null
+                        }
+                    <Grid container spacing={4} >   
+                        {groupShowings(showingList).map((showingGroup) => (
+                            <MovieOverviewShowing showings={showingGroup.showings} key={showingGroup.date} />
                         ))}
                     </Grid>
                 </Box>
@@ -47,3 +54,5 @@ const MovieOverviewPage: React.FC = () => {
 };
 
 export default MovieOverviewPage;
+
+

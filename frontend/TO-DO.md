@@ -29,6 +29,7 @@
     
 
 Minor fixes and features:
+- [ ] fix searchbar from same route
 - [ ] Split types into Model and Props
 - [x] Fix footer margin copyrights
 - [ ] Fixed Header taking space

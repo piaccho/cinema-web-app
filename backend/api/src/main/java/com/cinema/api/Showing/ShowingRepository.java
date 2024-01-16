@@ -11,5 +11,5 @@ public interface ShowingRepository extends MongoRepository<Showing, String> {
 
     List<Showing> findByDatetimeAfterOrderByDatetimeDesc(LocalDateTime localDateTime);
 
-    Optional<Showing> findByMovieId(String movieId);
+    List<Showing> findByMovie_MovieId(String movieId);
 }
