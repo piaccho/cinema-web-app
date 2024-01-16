@@ -21,7 +21,7 @@ const MovieOverviewShowing: React.FC<{ showings: Showing[] }> = ({ showings }) =
                     </Typography>
                     <Box sx={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                         {showings.map((show, index) => (
-                            <Button key={index} variant={'contained'} disabled={show.freeSeats <= 0 ? true : false}>{getTimeFromDate(show.datetime)}</Button>
+                            <Button key={index} variant={'contained'} disabled={show.freeSeats <= 0 ? true : false}>{getTimeFromDate(show.datetime.toString())}</Button>
                         ))}
                     </Box>
                 </CardContent>

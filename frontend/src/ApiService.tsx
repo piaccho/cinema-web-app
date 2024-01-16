@@ -104,7 +104,7 @@ export default class ApiService {
 
     async getShowingListsByDate(date: string): Promise<Showing[]> {
         const response = await this.api.get<Showing[]>(`${API.GET_SHOWINGS_BY_DATE}${date}`);
-        console.log(`Got repertoire with ${response.data.length} showings`, response.data);
+        console.log(`Got repertoire for ${date}`, response.data);
         return response.data;
         // return fetch("/src/mocks/showings.json")
         //     .then(response => {

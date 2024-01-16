@@ -7,20 +7,21 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DatePicker } from '@mui/x-date-pickers';
-import { ShowingList } from '../types';
+import { Showing } from '../types';
 import { useNavigate, useParams } from 'react-router-dom';
+import { groupShowingsByMovie } from '../util/groupShowings';
 
 const RepertoirePage: React.FC = () => {
     const navigate = useNavigate();
     const { date } = useParams();
     const [value, setValue] = React.useState<Dayjs | null>(dayjs());
-    const [showingLists, setShowingLists] = useState<ShowingList[]>([]);
+    const [showingList, setShowingList] = useState<Showing[]>([]);
     const apiService = new ApiService();
 
     useEffect(() => {
         const fetchShowings = async () => {
             if (date) {
-                setShowingLists(await apiService.getShowingListsByDate(date));
+                setShowingList(await apiService.getShowingListsByDate(date));
             }
         };
 
@@ -65,8 +66,8 @@ const RepertoirePage: React.FC = () => {
             </Box>
             <Typography variant="h4" mb={3} sx={{ fontWeight: 'bold', color: 'primary.main' }}>Repertoire: <Box component="span" sx={{ color: 'secondary.dark' }}>{date ? date : ''}</Box></Typography>
             <Grid container spacing={4}>
-                {showingLists.map((showingList) => (
-                    <RepertoireItem showingList={showingList} key={showingList.id}/>
+                {groupShowingsByMovie(showingList).map((showingGroup) => (
+                    <RepertoireItem showings={showingGroup.showings} key={showingGroup.movieId}/>
                 ))}
             </Grid>
         </Container>

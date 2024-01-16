@@ -75,7 +75,13 @@ export interface MovieOverviewCardProps {
     onButtonClick: () => void;
 }
 
-export type GroupedShowings = {
+export type DateGroupedShowings = {
     date: string;
+    showings: Showing[];
+};
+
+
+export type MovieIdGroupedShowings = {
+    movieId: string;
     showings: Showing[];
 };

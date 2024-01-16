@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { Showing } from '../types';
 import ApiService from '../ApiService';
 import MovieOverviewShowing from '../components/MovieOverviewShowing';
-import groupShowings from '../util/groupShowings';
+import {groupShowingsByDate} from '../util/groupShowings';
 
 const MovieOverviewPage: React.FC = () => {
     const location = useLocation();
@@ -36,14 +36,14 @@ const MovieOverviewPage: React.FC = () => {
                     <Typography variant="h4" mb={2} sx={{ color: 'primary.main', fontWeight: 'Bold' }}>
                         Repertoires:
                     </Typography>
-                    {groupShowings(showingList).length === 0 ? 
+                    {groupShowingsByDate(showingList).length === 0 ? 
                             <Typography variant="h6" mb={4} sx={{ color: 'primary.dark', fontWeight: 'Bold' }}>
                                 No showings available
                             </Typography>
                             : null
                         }
                     <Grid container spacing={4} >   
-                        {groupShowings(showingList).map((showingGroup) => (
+                        {groupShowingsByDate(showingList).map((showingGroup) => (
                             <MovieOverviewShowing showings={showingGroup.showings} key={showingGroup.date} />
                         ))}
                     </Grid>

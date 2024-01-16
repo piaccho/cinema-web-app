@@ -1,6 +1,6 @@
-import { GroupedShowings, Showing } from "../types";
+import { DateGroupedShowings, MovieIdGroupedShowings, Showing } from "../types";
 
-export default function groupShowingsByDate(showings: Showing[]): GroupedShowings[] {
+export function groupShowingsByDate(showings: Showing[]): DateGroupedShowings[] {
     const grouped: { [key: string]: Showing[] } = {};
 
     for (const showing of showings) {
@@ -14,5 +14,22 @@ export default function groupShowingsByDate(showings: Showing[]): GroupedShowing
     return Object.keys(grouped).map(date => ({
         date,
         showings: grouped[date],
+    }));
+}
+
+export function groupShowingsByMovie(showings: Showing[]): MovieIdGroupedShowings[] {
+    const grouped: { [key: string]: Showing[] } = {};
+
+    for (const showing of showings) {
+        const movieId = showing.movie.movieId;
+        if (!grouped[movieId]) {
+            grouped[movieId] = [];
+        }
+        grouped[movieId].push(showing);
+    }
+
+    return Object.keys(grouped).map(movieId => ({
+        movieId,
+        showings: grouped[movieId],
     }));
 }
