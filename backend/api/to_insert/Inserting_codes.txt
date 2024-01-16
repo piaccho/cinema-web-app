@@ -3,7 +3,7 @@ Ten kod był używany do dodawania do bazy w DBConfigure
     Dodawanie kategorii
 //            // Wczytaj dane z pliku JSON
 //            List<CategoryData> categoryDataList = objectMapper.readValue(
-//                    new File("to_insert/genres.json"),
+//                    new File("to_insert/categories.json"),
 //                    new TypeReference<List<CategoryData>>() {}
 //            );
 //
@@ -52,8 +52,8 @@ Ten kod był używany do dodawania do bazy w DBConfigure
 //            }
 //
 //
-//    private List<Category> mapGenres(List<String> genres, CategoryRepository categoryRepository) {
-//        return genres.stream()
+//    private List<Category> mapGenres(List<String> categories, CategoryRepository categoryRepository) {
+//        return categories.stream()
 //                .map(genreName -> {
 //                    Category category = new Category(genreName);
 //                    return categoryRepository.findByName(category.getName())

@@ -46,4 +46,8 @@ public class MovieService {
     public List<Movie> getMoviesByCategories(List<Category> categories) {
         return movieRepository.findByCategoriesIn(categories);
     }
+
+    public List<Movie> getMoviesBySearchQuery(String query) {
+        return movieRepository.findByTitleContainingIgnoreCase(query);
+    }
 }

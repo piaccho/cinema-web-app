@@ -24,6 +24,19 @@ public class MongoDbConfig {
             MongoTemplate mongoTemplate) {
 
         return args -> {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            List<GenreData> categoryDataList = objectMapper.readValue(
+//                    new File("to_insert/genres.json"),
+//                    new TypeReference<List<GenreData>>() {}
+//            );
+//            for (GenreData categoryData : categoryDataList) {
+//                Genre genre = new Genre(categoryData.getName());
+//                genreRepository.findByName(genre.getName())
+//                        .ifPresentOrElse(
+//                                s -> System.out.println("Genre " + s + " already exists"),
+//                                () -> genreRepository.insert(genre)
+//                        );
+//            }
 
             System.out.println("--------");
         };

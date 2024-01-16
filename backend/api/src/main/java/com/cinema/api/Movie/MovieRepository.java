@@ -17,4 +17,6 @@ public interface MovieRepository extends MongoRepository<Movie, String> {
     List<Movie> findTop20ByReleaseDateAfterOrderByPopularityDesc(LocalDate currentDate);
 
     List<Movie> findByCategoriesIn(List<Category> categories);
+
+    List<Movie> findByTitleContainingIgnoreCase(String query) ;
 }

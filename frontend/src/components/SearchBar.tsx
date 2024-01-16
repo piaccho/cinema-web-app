@@ -46,7 +46,7 @@ const SearchBar: React.FC = () => {
             navigate(`/movies/search/${searchQuery}`);
         }
     };
-    const handleIconClick = () => {
+    const handleClick = () => {
         if (searchQuery !== '') {
             navigate(`/movies/search/${searchQuery}`);
         }
@@ -64,7 +64,7 @@ const SearchBar: React.FC = () => {
                     onKeyDown={handleSearch}
                 />
             </Search>
-            <IconButton onClick={handleIconClick} size="large" aria-label="search" color="inherit">
+            <IconButton onClick={handleClick} size="large" aria-label="search" color="inherit">
                 <SearchIcon />
             </IconButton>
         </Box>

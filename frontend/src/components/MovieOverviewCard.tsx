@@ -91,7 +91,7 @@ const MovieOverviewCard: React.FC<MovieOverviewCardProps> = ({ movie, onButtonCl
                                         Genres:
                                     </TableCell>
                                     <TableCell align="right">
-                                        {movie.genres.join(', ')}
+                                        {movie.categories.join(', ')}
                                     </TableCell>
                                 </TableRow>
                                 <TableRow

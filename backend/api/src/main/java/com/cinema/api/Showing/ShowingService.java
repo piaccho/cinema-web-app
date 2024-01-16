@@ -47,4 +47,8 @@ public class ShowingService {
     public List<Showing> getShowingsByDate(LocalDate date) {
         return showingRepository.findByDatetimeAfterOrderByDatetimeDesc(date.atTime(0, 0));
     }
+
+    public Optional<Showing> getShowingByMovieId(String movieId) {
+        return showingRepository.findByMovieId(movieId);
+    }
 }

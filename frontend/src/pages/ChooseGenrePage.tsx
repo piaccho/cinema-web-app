@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, Button, Container, Box } from '@mui/material';
-import { Genre } from '../types';
+import { Category } from '../types';
 import ApiService from '../ApiService';
 import { Link } from 'react-router-dom';
 
 
 const ChooseGenrePage: React.FC = () => {
-    const [genres, setGenres] = useState<Genre[]>([]);
+    const [genres, setGenres] = useState<Category[]>([]);
     const apiService = new ApiService();
 
     useEffect(() => {
         const fetchGenres = async () => {
-            const genres = await apiService.getMoviesGenres();
+            const genres = await apiService.getGenres();
             setGenres(genres);
         };
         fetchGenres();
@@ -37,7 +37,7 @@ const ChooseGenrePage: React.FC = () => {
                     <Button 
                         key={index}
                         component={Link} 
-                        to={`/movies/genres/${genre.name.toLowerCase()}`} 
+                        to={`/movies/genres/${genre.name}`} 
                         variant="contained" 
                         color="primary" 
                         sx={{ width: '100%' }}

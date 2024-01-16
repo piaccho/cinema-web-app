@@ -10,4 +10,6 @@ public interface ShowingRepository extends MongoRepository<Showing, String> {
     Optional<Showing> findByShowingId(String showingId);
 
     List<Showing> findByDatetimeAfterOrderByDatetimeDesc(LocalDateTime localDateTime);
+
+    Optional<Showing> findByMovieId(String movieId);
 }

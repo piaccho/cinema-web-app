@@ -1,78 +1,78 @@
 [
     {
-        "categoryId": "65a3ede12cb23953ac5ea058",
+        "genreId": "65a3ede12cb23953ac5ea058",
         "name": "Crime"
     },
     {
-        "categoryId": "65a3ede12cb23953ac5ea059",
+        "genreId": "65a3ede12cb23953ac5ea059",
         "name": "Drama"
     },
     {
-        "categoryId": "65a3f4f698ce0963c74027fd",
+        "genreId": "65a3f4f698ce0963c74027fd",
         "name": "Action"
     },
     {
-        "categoryId": "65a3f4f698ce0963c74027fe",
+        "genreId": "65a3f4f698ce0963c74027fe",
         "name": "Adventure"
     },
     {
-        "categoryId": "65a3f4f698ce0963c74027ff",
+        "genreId": "65a3f4f698ce0963c74027ff",
         "name": "Animation"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402800",
+        "genreId": "65a3f4f698ce0963c7402800",
         "name": "Comedy"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402801",
+        "genreId": "65a3f4f698ce0963c7402801",
         "name": "Documentary"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402802",
+        "genreId": "65a3f4f698ce0963c7402802",
         "name": "Family"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402803",
+        "genreId": "65a3f4f698ce0963c7402803",
         "name": "Fantasy"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402804",
+        "genreId": "65a3f4f698ce0963c7402804",
         "name": "History"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402805",
+        "genreId": "65a3f4f698ce0963c7402805",
         "name": "Horror"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402806",
+        "genreId": "65a3f4f698ce0963c7402806",
         "name": "Music"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402807",
+        "genreId": "65a3f4f698ce0963c7402807",
         "name": "Mystery"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402808",
+        "genreId": "65a3f4f698ce0963c7402808",
         "name": "Romance"
     },
     {
-        "categoryId": "65a3f4f698ce0963c7402809",
+        "genreId": "65a3f4f698ce0963c7402809",
         "name": "Science Fiction"
     },
     {
-        "categoryId": "65a3f4f798ce0963c740280a",
+        "genreId": "65a3f4f798ce0963c740280a",
         "name": "TV Movie"
     },
     {
-        "categoryId": "65a3f4f798ce0963c740280b",
+        "genreId": "65a3f4f798ce0963c740280b",
         "name": "Thriller"
     },
     {
-        "categoryId": "65a3f4f798ce0963c740280c",
+        "genreId": "65a3f4f798ce0963c740280c",
         "name": "War"
     },
     {
-        "categoryId": "65a3f4f798ce0963c740280d",
+        "genreId": "65a3f4f798ce0963c740280d",
         "name": "Western"
     }
 ]

@@ -3,15 +3,12 @@ package com.cinema.api.Showing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:5173/", maxAge = 3600)
 @RestController
 @RequestMapping("/showings")
 public class ShowingResource {
@@ -32,7 +29,12 @@ public class ShowingResource {
         return showingService.getShowingById(showingId);
     }
 
-    @GetMapping("/byDate/{date}")
+    @GetMapping("/movie/{movieId}")
+    public Optional<Showing> getShowingByMovieId(@PathVariable("movieId") String movieId) {
+        return showingService.getShowingByMovieId(movieId);
+    }
+
+    @GetMapping("/date/{date}")
     public List<Showing> getShowingsByDate(@PathVariable("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return showingService.getShowingsByDate(date);
     }

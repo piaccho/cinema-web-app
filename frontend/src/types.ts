@@ -1,9 +1,9 @@
 import React from "react";
 
 export interface Movie {
-    id: number;
+    movieId: number;
     adult: boolean;
-    genres: string[];
+    categories: Category[];
     title: string;
     originalTitle: string;
     releaseDate: string;
@@ -17,14 +17,14 @@ export interface Movie {
 }
 
 export interface BasicMovie {
-    id: number;
-    genres: string[];
+    movieId: number;
+    categories: Category[];
     title: string;
     image: string;
     length: number;
 }
 
-export interface Genre {
+export interface Category {
     id: number;
     name: string;
 }

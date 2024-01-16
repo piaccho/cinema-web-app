@@ -6,6 +6,5 @@ import java.util.Optional;
 
 public interface CategoryRepository extends MongoRepository<Category, String> {
     Optional<Category> findByName(String name);
-
-    Optional<Category> findByCategoryId(String categoryId);
+    Optional<Category> findByCategoryId(String genreId);
 }

@@ -11,11 +11,11 @@ const MovieItem: React.FC<{ movie: Movie }> = ({ movie }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/movies/${movie.id}`, { state: { movie } });
+        navigate(`/movies/${movie.movieId}`, { state: { movie } });
     };
     
     return (
-        <Card key={movie.id} sx={{ width: 240, height: 500, bgcolor: 'white', cursor: 'pointer' }} onClick={handleClick}>
+        <Card key={movie.movieId} sx={{ width: 240, height: 500, bgcolor: 'white', cursor: 'pointer' }} onClick={handleClick}>
             <CardMedia
                 sx={{ height: 360 }}
                 component="img"

@@ -22,7 +22,7 @@ const MovieOverviewPage: React.FC = () => {
     
     useEffect(() => {
         const fetchShowings = async () => {
-            setShowingLists(await apiService.getShowingListsById(movie.id));
+            setShowingLists(await apiService.getShowingListsByMovieId(movie.id));
         };
         fetchShowings();
     }, []);
